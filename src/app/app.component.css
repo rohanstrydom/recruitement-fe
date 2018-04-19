@@ -1,0 +1,72 @@
+.admin-login {
+    text-align: right;
+}
+.admin-login a{ font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+                color: #000000;
+                line-height:76px;
+            }
+
+.logo img{  margin-top:0px;
+            }
+
+.resp-img{
+    /* background-image: url(../assets/hiring-tool-top-banner.png); */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom:40px;
+    padding: 0px;
+}
+.resp-img img{  width:100%;
+                margin:0em 0em;
+                padding:0em;
+                }
+
+*,html,body{font-family: "Graphik Regular", "Arial", Sans-Serif !important; padding: 0px;margin:0px;}
+
+.otp-notice h3{ color:#000000;
+                text-align:center;
+                font-weight:bold;
+                line-height:35px;
+                font-size:25px;
+                margin-bottom:30px;
+                }
+otp{ margin-top:40px;}
+
+/***** Footer *****/
+.footer{    font-size: 12px;
+            text-align: center;
+            margin-top:30px;
+            }
+
+.footer a{  font-weight:bold;
+            text-decoration: none; 
+            color:#000000;           
+            }       
+               
+.copyright{ margin-top:10px;}
+
+.mrg-top{margin-top:15px;}
+
+.mrg-bttm{ margin-bottom:15px;}
+
+/** Bootstrap overwrites **/
+.next{ border-radius: 0;}
+.intxt{ border:none;
+        border-radius:0;
+        background-color: grey;
+    }
+
+.section-title{
+ color:#EE82EE;
+}
+
+@media only screen and (max-width: 600px) {
+    .otp-notice h3{ font-size:18px;
+                    line-height: 25px;
+                    }
+}
