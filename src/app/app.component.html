@@ -4,37 +4,39 @@
           <div class="col-lg-4 col-sm-6 col-xs-6 logo">
             <a href="#">
                 <img alt="ACCENTURE" src="../assets/accenture-logo.png" class="img-responsive" />
-            </a>          
+            </a>
           </div>
           <div class="col-lg-8 col-sm-6 col-xs-6 admin-login">
             <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Admin log in</a>
           </div>
       </div>
-
-    <!-- Top Bannner -->
-    <div class="row">
-      <div class="col-lg-12 resp-img">
-        <img alt="ACCENTURE" src="../assets/hiring-tool-top-banner.png" class="img-responsive" />
-      </div>  
-    </div>
-  <!-- /Top Banner/ -->
 </header>
+
+<!-- Top Bannner -->
+<section>
+  <div class="row">
+    <div class="col-lg-12 resp-img">
+      <img alt="ACCENTURE" src="../assets/hiring-tool-top-banner.png" class="img-responsive" />
+    </div>
+  </div>
+</section>
+<!-- /Top Banner/ -->
+
 
 <section>
   <!-- Content -->
   <div class="row">
-      <article class="col-lg-12 otp-notice">         
+      <article class="col-lg-12 otp-notice">
           <h3>
-          <div ngFor="let section of sectionTitle"></div>
-          </h3>          
+            <div ngFor="let section of sectionTitle"></div>
+          </h3>
       </article>
-      
+
       <article class="col-lg-12">
           <div class="col-lg-4">&nbsp;</div>
           <div class="col-lg-4 text-center">
-              <view-phoneNumber></view-phoneNumber>
-              <view-oneTimePin></view-oneTimePin>
-          </div>        
+              <router-outlet></router-outlet>
+          </div>
           <div class="col-lg-4">&nbsp;</div>
       </article>
   </div>
@@ -44,13 +46,12 @@
 <footer>
   <div class="row">
     <div class="col-lg-12 footer">
-        By using this site you agree that we can place cookies on your device.<br />  
-        See our <a href="#">Privacy Policy and Cookie Policy</a> for details.
+        By using this site you agree that we can place cookies on your device.<br />
+        See our <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a> for details.
         <div class="copyright">
             &copy; 2018 Accenture. All Rights Reserved.
-        </div>       
+        </div>
     </div>
   </div>
-</footer>  
-
+</footer>
 </div>
