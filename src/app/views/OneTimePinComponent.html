@@ -1,19 +1,51 @@
-<div class="row">
-    <div class="col-lg">
-        <h3 class="section-title font-weight-bold">
-            Now enter the one time pin (OTP) we’ve sent<br />
-            to the provided number:
-        </h3>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-lg-3 col-lg-5 mrg-top">
-        <input type="text" class="form-control intxt" placeholder="OTP"/>
-    </div>
-    <div class="offset-lg-3 col-lg-5 mrg-top">
-            <a class="font-weight-bold" href="#">No OTP? Click here to resend</a>
-    </div>
-    <div class="offset-lg-3 col-lg-5 align-self-center mrg-top">
-        <button (click)="onClickMe()" [routerLink]="['../views/OneTimePinComponent.html']"  class="btn btn-primary next">NEXT</button>
-    </div>
-</div>
+<!-- Top Navigation -->
+<article class="col-lg-12">
+  <div class="row">
+      <div class="col-lg-4 col-sm-6 col-xs-6 logo">
+        <a href="#">
+            <img alt="ACCENTURE" src="../assets/accenture-logo.png" class="img-responsive" />
+        </a>S
+      </div>
+      <div class="col-lg-8 col-sm-6 col-xs-6 admin-login">
+        <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Admin log in</a>
+      </div>
+  </div>
+</article>
+<!-- Top Navigation -->
+
+<!-- Top Bannner -->
+<article class="col-lg-12 resp-img">
+    <img alt="ACCENTURE" src="../../assets/hiring-tool-top-banner.png" class="img-responsive" />
+</article>
+<!-- /Top Banner/ -->
+
+<!-- Title -->
+<article class="col-lg-12 otp-notice">
+  <div class="row">
+      <h3 class="section-title font-weight-bold offset-lg-4 col-lg-4">
+          Now enter the one time pin (OTP) we’ve sent<br /> to the provided number:
+      </h3>
+  </div>
+</article>
+ <!-- Title -->
+
+<!-- Form or Content -->
+<article class="col-lg-12">
+  <div class="row">
+      <div class="offset-lg-4 col-lg-4 text-center">
+          <form (ngSubmit)="sendPin()">
+              <div class="offset-lg-3 col-lg-5">
+                  <input type="text" class="form-control input" placeholder="OTP" id="pin" name="pin"
+                        [(ngModel)]="oneTimePin.pin"/>
+              </div>
+              <div class="offset-lg-2 col-lg-8 mrg-top">
+                  <a class="font-weight-bold" href="#" style="color:#000; text-decoration:underline;">No OTP? Click here to resend</a>
+              </div>
+              <div class="offset-lg-3 col-lg-5 align-self-center mrg-top">
+                  <button type="submit"  class="btn btn-primary next">NEXT</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</article>
+<!-- Form or Content -->

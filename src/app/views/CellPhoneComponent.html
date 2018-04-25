@@ -1,21 +1,46 @@
-<div class="row">
-    <div class="col-lg">
-        <h3 class="section-title font-weight-bold">
-            We are excited to hear from you. Start by providing your cellular number below:
-        </h3>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-lg-3 col-lg-5">
-        <form name ="form" (ngSubmit)="onSubmit()">
-            <div class="col-lg-12 mrg-top form-group">
-                <input type="text" class="form-control intxt" id="cellphone-number" name="cellphoneNumber" placeholder="Telephone (cellular)" required
-              />
-            </div>
-            <div class="col-lg-12 align-self-center mrg-top">
-                <button type="submit" class="btn btn-primary next">NEXT</button>
-            </div>
+<!-- Top Navigation -->
+<article class="col-lg-12">
+  <div class="row">
+      <div class="col-lg-4 col-sm-6 col-xs-6 logo">
+        <a href="#">
+            <img alt="ACCENTURE" src="../assets/accenture-logo.png" class="img-responsive" />
+        </a>
+      </div>
+      <div class="col-lg-8 col-sm-6 col-xs-6 admin-login">
+        <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Admin log in</a>
+      </div>
+  </div>
+</article>
+<!-- Top Navigation -->
+
+<!-- Top Bannner -->
+<article class="col-lg-12 resp-img">
+    <img alt="ACCENTURE" src="../../assets/hiring-tool-top-banner.png" class="img-responsive" />
+</article>
+<!-- /Top Banner/ -->
+
+<!-- Title -->
+<article class="col-lg-12 otp-notice">
+  <div class="row">
+    <h3 class="section-title font-weight-bold offset-lg-4 col-lg-4">
+        We are excited to hear from you. Start by providing<br /> your cellular number below:
+    </h3>
+  </div>
+</article>
+ <!-- Title -->
+
+<!-- Form or Content -->
+<article class="col-lg-12">
+    <div class="offset-4 col-lg-4 text-center">
+        <form (ngSubmit)="sendCellphone()">
+          <div class="col-lg-12 align-self-center">
+            <input type="text" id="cellphone-number" name="cellphoneNumber" placeholder="Telephone (cellular)"
+                    [(ngModel)] = "oneTimePin.cellphone" class="input"/>
+          </div>
+          <div class="col-lg-12 align-self-center mrg-top">
+            <button type="submit" class="btn btn-primary next">NEXT</button>
+          </div>
         </form>
     </div>
-</div>
-
+</article>
+<!-- Form or Content -->

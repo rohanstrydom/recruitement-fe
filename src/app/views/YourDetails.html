@@ -1,10 +1,53 @@
-<div class="row">
-    <form>
-        <input type="email" class="form-control col-lg" />
-        <input type="email" class="form-control col-lg" />
-        <input type="email" class="form-control col-lg" />
-        <input type="email" class="form-control col-lg" />
-        <input type="email" class="form-control col-lg" />
-        <button type="submit">NEXT</button>
-    </form>
-</div>
+<!-- Top Navigation -->
+<article class="col-lg-12">
+  <div class="row">
+      <div class="col-lg-4 col-sm-6 col-xs-6 logo">
+        <a href="#">
+            <img alt="ACCENTURE" src="../assets/accenture-logo.png" class="img-responsive" />
+        </a>
+      </div>
+      <div class="col-lg-8 col-sm-6 col-xs-6 admin-login">
+        <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Admin log in</a>
+      </div>
+  </div>
+</article>
+<!-- Top Navigation -->
+
+<!-- Top Bannner -->
+<article class="col-lg-12 resp-img">
+    <img alt="ACCENTURE" src="../../assets/hiring-tool-top-banner.png" class="img-responsive" />
+</article>
+<!-- /Top Banner/ -->
+
+<!-- Title -->
+<article class="col-lg-12 otp-notice"><div class="row"><h3 class="section-title font-weight-bold offset-lg-4 col-lg-4">Please provide your details below:</h3></div></article>
+<!-- Title -->
+
+<!-- Form or Content -->
+<article class="col-lg-12">
+  <div class="row">
+      <div class="offset-4 col-lg-4 text-center">
+          <form (ngSubmit)="sendDetails()">
+            <div class="col-lg-12 align-self-center mrg-bttm">
+              <div class="row details-top">
+                <div class="col-lg-4"><input id="first-names" name="firstNames" type="text" placeholder="First Name(s)" class="col-lg-12" [(ngModel)] = "details.firstNames" /></div>
+                <div class="col-lg-4"><input id="surname" name="surname" type="text" placeholder="Surname" class="col-lg-12" [(ngModel)] = "details.surname" /></div>
+                <div class="col-lg-4"><input id="id-number" name="idNumber" type="text" placeholder="ID number" class="col-lg-12" [(ngModel)] = "details.idNumber" /></div>
+              </div>
+              <div class="row details-bottom">
+                <div class="col-lg-4"><input id="email-address" name="emailAddress" type="email" placeholder="Email address" class="col-lg-12" [(ngModel)] = "details.emailAddress" /></div>
+                <div class="col-lg-8">
+                  <input id="cellphone" name="cellphone" type="text" placeholder="Telephone (cellular)" class="col-lg-12"
+                          [(ngModel)] = "details.cellphone" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 align-self-center mrg-top">
+              <button type="submit" class="btn btn-primary next">NEXT</button>
+            </div>
+          </form>
+      </div>
+  </div>
+
+</article>
+<!-- Form or Content -->

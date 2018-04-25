@@ -2,8 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes, Router, NavigationExtras } from '@angular/router';
 import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
-import { FormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { FormsModule, NgControl, Validators, FormGroup, FormControl, FormControlDirective } from '@angular/forms';
+
+// Services
 import { YourDetails, OneTimePin } from './services/YourDetails';
 
 // Main Component
@@ -32,24 +33,22 @@ export class AppComponent  implements OnInit {
 // CellPhone Number Component
 @Component({
   selector: 'app-cellphone-number',
+  providers: [ OneTimePin ],
   templateUrl: './views/CellPhoneComponent.html',
   styleUrls: [ './app.component.css' ]
 })
 
 export class CellphoneNumberComponent implements OnInit {
-  public cellphone: string;
-  constructor(private router: Router, private formGroup: FormGroup, private oneTimePin: OneTimePin) {}
-
-  ngOnInit() {
-    this.oneTimePin.cellphone = this.formGroup.get('cellphoneNumber').value;
-
+  public cellphone: any;
+  constructor(private router: Router, public oneTimePin: OneTimePin) {
+    this.cellphone = this.oneTimePin.cellphone;
   }
 
-  onSubmit() {
-    this.formGroup = new FormGroup ({
-      cellphoneNumber: new FormControl('', Validators.minLength(45))
-    });
-    console.log(this.formGroup.value);
+  ngOnInit() {}
+
+
+  sendCellphone() {
+    console.log(this.oneTimePin.cellphone);
 
     this.router.navigate(['one-time-pin']);
     return true;
@@ -60,27 +59,82 @@ export class CellphoneNumberComponent implements OnInit {
 // One Time Pin Component
 @Component({
   selector: 'app-one-time-pin',
+  providers: [ OneTimePin ],
   templateUrl: './views/OneTimePinComponent.html',
   styleUrls: ['./app.component.css']
 })
 
 export class OneTimePinComponent implements OnInit {
-  constructor() {}
+
+  public pin: any;
+
+  constructor(public oneTimePin: OneTimePin, private router: Router) {
+    this.pin = this.oneTimePin.pin; }
   ngOnInit() {}
 
-  onClickMe() {}
+  sendPin() {
+    console.log(this.oneTimePin.pin);
+    this.router.navigate(['your-details']);
+  }
 }
 
 // Your Details
 @Component({
   selector: 'app-your-details',
   templateUrl: './views/YourDetails.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ YourDetails ]
 })
 
 export class YourDetailsComponent implements OnInit {
-    constructor() {}
+    public firstNames;
+    public surname;
+    public idNumber;
+    public emailAddress;
+    public cellphone;
+
+    constructor(public details: YourDetails, public router: Router) {
+      this.firstNames = this.details.firstNames;
+      this.surname = this.details.surname;
+      this.idNumber = this.details.idNumber;
+      this.emailAddress = this.details.emailAddress;
+      this.cellphone = this.details.cellphone;
+    }
     ngOnInit() {}
+
+    sendDetails() { console.log(this.details);
+      this.router.navigate(['questions-and-answers']);
+    }
+}
+
+// Questions and Answers
+@Component({
+  selector: 'app-questions-and-answers',
+  templateUrl: './views/QuestionsAndAnswersComponent.html',
+  styleUrls: ['./app.component.css']
+})
+export class QuestionsAndAnswersComponent implements OnInit {
+  constructor(private router: Router) {}
+  ngOnInit() {}
+  sendAnswer() {
+        console.log(this.sendAnswer);
+        this.router.navigate(['upload-video']);
+  }
+}
+
+// Upload Videos
+@Component({
+  selector: 'app-upload-video',
+  templateUrl: './views/UploadAVideoComponent.html',
+  styleUrls: ['./app.component.css']
+})
+export class UploadVideoComponent implements OnInit {
+  constructor(public router: Router) {}
+  ngOnInit() {}
+
+  uploadVideo() {
+    this.router.navigate(['']);
+  }
 }
 // Page not found Component
 @Component({
