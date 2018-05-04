@@ -5,7 +5,7 @@ import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrie
 import { FormsModule, NgControl, Validators, FormGroup, FormControl, FormControlDirective } from '@angular/forms';
 
 // Services
-import { YourDetails, OneTimePin } from './services/YourDetails';
+import { YourDetails, OneTimePin } from './services/RecruitmentProviders';
 
 // Main Component
 @Component({
@@ -16,13 +16,6 @@ import { YourDetails, OneTimePin } from './services/YourDetails';
 
 export class AppComponent  implements OnInit {
   title = 'app';
-
-  titles = [
-    'We are excited to hear from you. Start by providing <br />your cellular number below:',
-    'Now enter the one time pin (OTP) we’ve sent <br />to the provided number:',
-    'Please provide your details below:'
-  ];
-
   constructor() {}
 
   ngOnInit() {}
@@ -133,9 +126,21 @@ export class UploadVideoComponent implements OnInit {
   ngOnInit() {}
 
   uploadVideo() {
-    this.router.navigate(['']);
+    this.router.navigate(['your-done']);
   }
 }
+
+// Your Done
+@Component({
+  selector: 'app-your-done',
+  templateUrl: './views/YourDoneComponent.html',
+  styleUrls: ['./app.component.css']
+})
+export class YourDoneComponent implements OnInit {
+    constructor(public router: Router) {}
+    ngOnInit() {}
+}
+
 // Page not found Component
 @Component({
   selector: 'app-page-not-found',

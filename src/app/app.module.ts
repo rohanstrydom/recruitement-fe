@@ -1,4 +1,4 @@
-import { YourDetails, OneTimePin } from './services/YourDetails';
+import { YourDetails } from './services/RecruitmentProviders';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,7 +12,8 @@ import {  AppComponent,
           YourDetailsComponent,
           PageNotFoundComponent,
           QuestionsAndAnswersComponent,
-          UploadVideoComponent } from './app.component';
+          UploadVideoComponent,
+          YourDoneComponent } from './app.component';
 // import { HeroFormComponent } from './hero-form/hero-form.component';
 
 import { AppRoutingModule } from './/app-routing.module';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'your-details', component: YourDetailsComponent },
   { path: 'questions-and-answers', component: QuestionsAndAnswersComponent },
   { path: 'upload-video', component: UploadVideoComponent },
+  { path: 'your-done', component: YourDoneComponent },
   { path: '',   redirectTo: '/', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
                   YourDetailsComponent,
                   QuestionsAndAnswersComponent,
                   UploadVideoComponent,
+                  YourDoneComponent,
                   PageNotFoundComponent
                   ],
   imports: [  BrowserModule,
